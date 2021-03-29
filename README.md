@@ -72,7 +72,7 @@ docker run --name cassandra -p 9042:9042 -d -v "$(pwd)":/example-cassandra-dsbul
 docker exec -it cassandra cqlsh
 ```
 ```bash
-source '/example-cassandra-dsbulk-with-sed-and-awk cassandra/days_worked_by_previous_employees_by_job_title.cql'
+source '/example-cassandra-dsbulk-with-sed-and-awk/days_worked_by_previous_employees_by_job_title.cql'
 ```
 
 ## 4. Extract, Transform, and Load from DataStax Astra to Dockerized Apache Cassandra with dsbulk, sed, and awk.
