@@ -89,7 +89,7 @@ dsbulk unload -k test -t previous_employees_by_title -b "secure-connect-<db>.zip
 
 ### 4.2 - Load via CSV file to Dockerized Apache Cassandra Instance
 ```bash
-dsbulk load -url /path/to/example-cassandra-dsbulk-with-sed-and-awk/days_worked_by_previous_employees_by_job_title.csv -k test -t days_worked_by_previous_employees_by_job_title
+dsbulk load -url days_worked_by_previous_employees_by_job_title.csv -k test -t days_worked_by_previous_employees_by_job_title
 ```
 
 ### 4.3 - Confirm via CQLSH
