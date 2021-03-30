@@ -84,7 +84,7 @@ In this command, we are unloading from DataStax Astra, running an awk script, do
 **NOTE:** Input your specific variables for the placeholders in the command
 
 ```bash
-dsbulk unload -k test -t previous_employees_by_title -b "/path/to/secure-connect-<db>.zip" -u <Client ID> -p <Client Secret> | gawk -F, -f duration_calc.awk | sed 's/job_title,employee_name,employee_id,0/job_title,employee_name,employee_id,number_of_days_worked/' > days_worked_by_previous_employees_by_job_title.csv
+dsbulk unload -k test -t previous_employees_by_title -b "secure-connect-<db>.zip" -u <Client ID> -p <Client Secret> | gawk -F, -f duration_calc.awk | sed 's/job_title,employee_name,employee_id,0/job_title,employee_name,employee_id,number_of_days_worked/' > days_worked_by_previous_employees_by_job_title.csv
 ```
 
 ### 4.2 - Load via CSV file to Dockerized Apache Cassandra Instance
@@ -104,7 +104,7 @@ truncate table test.days_worked_by_previous_employees_by_job_title ;
 
 ### 4.4 - Do everything in one command
 ```bash
-dsbulk unload -k test -t previous_employees_by_title -b "/path/to/secure-connect-<db>.zip" -u <Client ID> -p <Client Secret> | gawk -F, -f duration_calc.awk | sed 's/job_title,employee_name,employee_id,0/job_title,employee_name,employee_id,number_of_days_worked/' | dsbulk load -k test -t days_worked_by_previous_employees_by_job_title
+dsbulk unload -k test -t previous_employees_by_title -b "secure-connect-<db>.zip" -u <Client ID> -p <Client Secret> | gawk -F, -f duration_calc.awk | sed 's/job_title,employee_name,employee_id,0/job_title,employee_name,employee_id,number_of_days_worked/' | dsbulk load -k test -t days_worked_by_previous_employees_by_job_title
 ```
 
 ### 4.5 - Confirm via CQLSH
