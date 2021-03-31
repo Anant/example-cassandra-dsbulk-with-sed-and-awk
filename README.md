@@ -54,7 +54,7 @@ This will be a pay-as-you-go method, but they won't ask for a payment method unt
 - Change `employee_id` from text to uuid
 - Change `first_day` and `last_day` to timestamp
 - Select `job_title` as the Partition Key
-- Select `employee_name` as the clustering column
+- Select `employee_id` as the Clustering Column
 - Hit the `Next` button
 - Select `test` as the target keyspace
 - Hit the `Next` button to begin loading the csv. 
